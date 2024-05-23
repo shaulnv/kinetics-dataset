@@ -10,7 +10,9 @@ function download_data {
     [ ! -d "$curr_dl" ] && mkdir -p "$curr_dl"
 
     # Download the data using wget with parallel execution
-    wget -qO- "$url" | xargs -n 1 -P 8 wget -c -P "$curr_dl"
+    # Fetch the list of URLs and prepare them for downloading
+    # Encode spaces as %20
+    wget -qO- "$url" | sed 's/ /%20/g' | xargs -n 1 -P 8 wget -c -P "$curr_dl"
 }
 
 # Download directories vars
