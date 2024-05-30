@@ -9,10 +9,10 @@ root_dl_targz="k600_targz"
 [ ! -d $root_dl_targz ] && mkdir $root_dl_targz
 
 # Define the download directory based on a root directory
-curr_dl="${root_dl_targz}/test"
+curr_dl="${root_dl_targz}/val"
 
 # URL where the list of files to be downloaded is located
-url="https://s3.amazonaws.com/kinetics/600/test/k600_test_path.txt"
+url="https://s3.amazonaws.com/kinetics/600/val/k600_val_path.txt"
 
 # Create the directory if it doesn't exist
 [ ! -d "$curr_dl" ] && mkdir -p "$curr_dl"
